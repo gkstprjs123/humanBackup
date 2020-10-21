@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="niewport"
+    content="width=device-width,
+    initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       
+    </script>
+    <style>
+        td{
+            width: 150px;
+            height: 200px;
+            background-color: burlywood;
+        }
+        
+    </style>
+
+</head>
+  
+  
+<body>
+    <table border="1" align="center">
+        <tr align="center">
+           <td colspan="5"><div>
+            <img src="인형뽑기.jpg" width="800" height="300">
+
+           </div></td>
+        </tr>
+        <tr align="center">
+            <td>
+                <img src="곰돌이.jpg" width="150" height="100">
+                <input type="button" onclick="click1(1000)" value="선택">
+                <p>1000원</p>
+            </td>
+            <td>
+                <img src="액션토끼.jpg" width="150" height="100">
+                <input type="button" onclick="click2(1500)" value="선택">
+                <p>1500원</p>
+            </td>
+            <td>
+                <img src="리락쿠마.jpg" width="150" height="100">
+                <input type="button" onclick="click3(1000)" value="선택">
+                <p>1000원</p>
+            </td>
+            <td>
+                <img src="토토로.jpg" width="150" height="100">
+                <input type="button" onclick="click4(1500)" value="선택">
+                <p>1500원</p>
+            </td>
+            <td>
+                <input type='button' onclick='butt(1000)' value="1000원추가">
+                <input type='button' onclick='butt(500)' value="500원추가"><br>
+                <input type="text" value="0" id="total" style="width: 50px;">원
+            </td>
+            
+        </tr>
+        <tr align="center">
+            <td colspan="4">
+                <div id="div">
+                 
+                </div>
+
+            </td>
+            <td>
+                <input type="button" onclick="money2()" value="반환"><br>
+                <input type="text" id="aaa" value="0" style="width: 50px;">원
+
+            </td>
+
+        </tr>
+    </table>
+    <script>
+        function butt(a){
+           var i=Number(document.getElementById('total').value)+a;
+           document.getElementById('total').value=i;          
+        }
+        function click1(a){          
+            var num=Math.floor(Math.random()*2)+1;
+            var c=Number(document.getElementById('total').value);
+        if(num==1){
+            c=c-a;
+            if(c>=0){              
+                document.getElementById('total').value=c;
+            document.getElementById('div').innerHTML+="<img src=곰돌이.jpg width=100; height=100;>"
+            }else{
+                alert("금액을 넣어주세요")
+            }   
+        }else{
+            if(c>=1000){
+                alert("뽑기실패")
+                document.getElementById('total').value-=1000;
+            }else{
+                alert("금액을 넣어주세요")
+            }
+            
+        } 
+            
+        }
+        function click2(a){          
+            var num=Math.floor(Math.random()*2)+1;
+            var c=Number(document.getElementById('total').value);
+        if(num==1){
+           c=c-a;
+            if(c>=0){              
+                document.getElementById('total').value=c;
+            document.getElementById('div').innerHTML+="<img src=액션토끼.jpg width=100; height=100;>"
+            }else{
+                alert("금액을 넣어주세요")
+            }   
+        }else{
+            if(c>=1500){
+                alert("뽑기실패")
+                document.getElementById('total').value-=1500;
+            }else{
+                alert("금액을 넣어주세요")
+            }
+        } 
+            
+        }
+        function click3(a){          
+            var num=Math.floor(Math.random()*2)+1;
+            var c=Number(document.getElementById('total').value);
+        if(num==1){
+            c=c-a;
+            if(c>=0){              
+                document.getElementById('total').value=c;
+            document.getElementById('div').innerHTML+="<img src=리락쿠마.jpg width=100; height=100;>"
+            }else{
+                alert("금액을 넣어주세요")
+            }   
+        }else{
+            if(c>=1000){
+                alert("뽑기실패")
+                document.getElementById('total').value-=1000;
+            }else{
+                alert("금액을 넣어주세요")
+            }
+        } 
+            
+        }
+        function click4(a){ 
+        var num=Math.floor(Math.random()*2)+1;
+        var c=Number(document.getElementById('total').value);
+        if(num==1){
+           c=c-a;
+            if(c>=0){              
+                document.getElementById('total').value=c;
+            document.getElementById('div').innerHTML+="<img src=토토로.jpg width=100; height=100;>"
+            }else{
+                alert("금액을 넣어주세요")
+            }   
+        }else{
+            if(c>=1500){
+                alert("뽑기실패")
+                document.getElementById('total').value-=1500;
+            }else{
+                alert("금액을 넣어주세요")
+            }
+        } 
+              
+        }
+        function money2(){
+                var c=document.getElementById('total').value;
+                document.getElementById('aaa').value=c;
+                document.getElementById('total').value='';
+        }
+
+    </script>
+</body>
+
+</html>
